@@ -2,9 +2,13 @@ import Indicador from '../models/Indicador';
 import Estratificacao from '../models/Estratificacao';
 import GrupamentoIndicador from '../models/GrupamentoIndicador';
 
+import Pagination from '../util/Pagination';
+
 class IndicadorController {
   async index(req, res) {
-    const indicadores = await Indicador.findAll({
+    const { page = 1 } = req.query;
+
+    const indicadores = await Pagination.paginate(page, Indicador, {
       attributes: [
         'id',
         'codigo',
@@ -15,6 +19,7 @@ class IndicadorController {
         'possui_ranking',
         'status',
       ],
+      order: [['codigo', 'ASC']],
       include: [
         {
           model: Estratificacao,
@@ -42,6 +47,7 @@ class IndicadorController {
         },
       ],
     });
+
     return res.json(indicadores);
   }
 }

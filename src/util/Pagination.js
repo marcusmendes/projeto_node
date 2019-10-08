@@ -1,6 +1,6 @@
 class Pagination {
   constructor() {
-    this.totalPerPage = 5;
+    this.totalPerPage = 20;
   }
 
   async paginate(page, model, options) {

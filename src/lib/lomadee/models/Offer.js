@@ -7,6 +7,16 @@ import Lomadee from '../Lomadee';
  */
 class Offer extends Lomadee {
   /**
+   * Busca uma oferta específica através do SKU e do ID da loja.
+   *
+   * @param {integer} offerId ID da oferta (SKU).
+   * @param {integer} storeId ID de loja.
+   */
+  getOffer(offerId, storeId) {
+    return this.get(`/offer/_id/${offerId}`, { storeId });
+  }
+
+  /**
    * Busca por uma oferta em uma determinada categoria
    *
    * @param {string} keyword      O termo da busca
@@ -45,16 +55,6 @@ class Offer extends Lomadee {
       sort,
       size: this.itemsPerPage,
     });
-  }
-
-  /**
-   * Busca uma oferta específica através do SKU e do ID da loja.
-   *
-   * @param {integer} offerId ID da oferta (SKU).
-   * @param {integer} storeId ID de loja.
-   */
-  getOffer(offerId, storeId) {
-    return this.get(`/offer/_id/${offerId}`, { storeId });
   }
 
   /**

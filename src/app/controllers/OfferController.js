@@ -1,4 +1,4 @@
-import Offer from '../lib/lomadee/models/Offer';
+import Offer from '../../lib/lomadee/models/Offer';
 
 class OfferController {
   index(req, res) {

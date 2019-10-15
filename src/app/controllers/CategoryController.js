@@ -1,4 +1,4 @@
-import Category from '../lib/lomadee/models/Category';
+import Category from '../../lib/lomadee/models/Category';
 
 class CategoryController {
   async search(req, res) {

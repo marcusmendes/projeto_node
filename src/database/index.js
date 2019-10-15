@@ -1,11 +1,7 @@
 import Sequelize from 'sequelize';
 import databaseConfig from '../config/database';
 
-import Indicador from '../models/Indicador';
-import Estratificacao from '../models/Estratificacao';
-import GrupamentoIndicador from '../models/GrupamentoIndicador';
-
-const models = [Indicador, Estratificacao, GrupamentoIndicador];
+const models = [];
 
 class Database {
   constructor() {

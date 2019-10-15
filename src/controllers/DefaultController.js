@@ -1,7 +1,6 @@
 class DefaultController {
   index(req, res) {
-    const data = req.query;
-    return res.json({ message: 'Index', request: data });
+    return res.json({ message: 'API 1.0' });
   }
 }
 

@@ -1,11 +1,12 @@
 import { Router } from 'express';
 
 import DefaultController from './controllers/DefaultController';
-import IndicadorController from './controllers/IndicadorController';
+import OfferController from './controllers/OfferController';
 
 const routes = new Router();
 
 routes.get('/', DefaultController.index);
-routes.get('/indicadores', IndicadorController.index);
+routes.get('/offers', OfferController.index);
+routes.get('/offers/search', OfferController.search);
 
 export default routes;

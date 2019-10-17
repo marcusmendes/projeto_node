@@ -10,7 +10,7 @@ import AuthController from './application/controllers/AuthController';
 /* Middlewares */
 import authValidation from './application/validations/Auth/authValidation';
 import UserStoreValidation from './application/validations/User/storeValidation';
-import offerSearchValidaton from './application/validations/Offer/searchValidation';
+import OfferValidation from './application/validations/Offer/OfferValidation';
 import categorySearchValidation from './application/validations/Category/searchValidation';
 
 const routes = Router();
@@ -26,8 +26,8 @@ routes.post('/auth', authValidation, AuthController.authenticate);
 
 /* Offers */
 routes.get('/offers', OfferController.index);
-routes.get('/offers/search', offerSearchValidaton, OfferController.search);
-routes.get('/offers/:offerId', OfferController.offer);
+routes.get('/offers/search', OfferValidation.search, OfferController.search);
+routes.get('/offers/:offerId', OfferValidation.offer, OfferController.offer);
 routes.get('/offers/category/:categoryId', OfferController.offersOfCategory);
 routes.get('/offers/store/:storeId', OfferController.offersOfStore);
 

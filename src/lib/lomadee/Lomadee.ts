@@ -22,7 +22,7 @@ export default class Lomadee {
    * @constructor
    */
   constructor() {
-    this.sourceId = Auth.config().url;
+    this.sourceId = Auth.config().sourceId;
     this.itemsPerPage = 20;
   }
 

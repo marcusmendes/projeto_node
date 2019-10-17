@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import '../../../bootstrap';
 
 /**
  * Interface que padroniza os dados do ambiente da aplicação
@@ -42,9 +42,9 @@ class Authentication {
     };
 
     this.test = {
-      url: '',
-      appToken: '',
-      sourceId: '',
+      url: `http://sandbox-api.lomadee.com/v3/${process.env.APP_TOKEN}`,
+      appToken: process.env.APP_TOKEN,
+      sourceId: process.env.SOURCE_ID,
     };
   }
 

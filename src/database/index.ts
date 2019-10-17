@@ -5,6 +5,10 @@ class Database {
     this.mongo();
   }
 
+  private database():void {
+    //
+  }
+
   private mongo(): void {
     const mongoURL = process.env.MONGO_URL || '';
     mongoose.connect(mongoURL, {

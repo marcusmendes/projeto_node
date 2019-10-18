@@ -11,7 +11,7 @@ class UserController {
     const user = await User.findOne({ email });
 
     if (user) {
-      return res.status(400).json('User already registered!');
+      return res.status(400).json({ error: 'User already registered!' });
     }
 
     const passwordHash = await bcrypt.hash(password, 8);
